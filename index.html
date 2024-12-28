@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Store</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(
+                to right, 
+                rgb(50, 50, 50), /* Abu-abu gelap */
+                rgb(30, 30, 30), /* Lebih gelap */
+                rgb(0, 0, 0)     /* Hitam */
+            );
+            background-attachment: fixed;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 1rem 3rem;
+            font-size: 2rem;
+            font-weight: bold;
+            z-index: 1000;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            padding: 150px 20px;
+        }
+
+        .game-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 200px;
+            margin: auto;
+        }
+
+        .game-item img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .game-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.7);
+        }
+
+        .game-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .game-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 3px solid rgba(255, 255, 255, 0);
+            transition: border-color 0.3s;
+            pointer-events: none;
+
+        }
+
+        .game-item:hover::before {
+            border-color: rgba(255, 255, 255, 0.7);
+        }
+
+        .price {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">Game Store</div>
+
+    <!-- Section 1 -->
+    <div class="section" id="section1">
+        <div class="container">
+            <div class="game-item">
+                <img src="image/cnth.jpg" alt="Game 1">
+                <div class="price">Price: $4k</div>
+            </div>
+            <div class="game-item">
+                <img src="image/cnth.jpg" alt="Game 2">
+                <div class="price">Price: $4k</div>
+            </div>
+            <div class="game-item">
+                <img src="image/cnth.jpg" alt="Game 3">
+                <div class="price">Price: $4k</div>
+            </div>
+            <div class="game-item">
+                <img src="image/cnth.jpg" alt="Game 4">
+                <div class="price">Price: $4k</div>
+            </div>
+            <div class="game-item">
+                <img src="image/cnth.jpg" alt="Game 5">
+                <div class="price">Price: $4k</div>
+            </div>
+            <div class="game-item">
+                <img src="image/cnth.jpg" alt="Game 6">
+                <div class="price">Price: $4k</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section" id="section2">
+        <div class="container">
+            <div class="game-item">
+                <img src="image/cnth.jpg" alt="Game 1">
+                <div class="price">Price: $4k</div>
+            </div>
+            <div class="game-item">
+                <img src="image/cnth.jpg" alt="Game 2">
+                <div class="price">Price: $4k</div>
+            </div>
+            <div class="game-item">
+                <img src="image/cnth.jpg" alt="Game 3">
+                <div class="price">Price: $4k</div>
+            </div>
+            <div class="game-item">
+                <img src="image/cnth.jpg" alt="Game 4">
+                <div class="price">Price: $4k</div>
+            </div>
+            <div class="game-item">
+                <img src="image/cnth.jpg" alt="Game 5">
+                <div class="price">Price: $4k</div>
+            </div>
+            <div class="game-item">
+                <img src="image/cnth.jpg" alt="Game 6">
+                <div class="price">Price: $4k</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
