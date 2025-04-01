@@ -90,30 +90,50 @@
     .content {
       margin-top: 6rem; /* To avoid overlap with navbar */
       display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 2rem;
       padding: 2rem;
+      width: 100%;
+    }
+
+    .category-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ffcc00;
+      margin-bottom: 1rem;
     }
 
     .product-container {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 1rem;
+    }
+
+    .product-container::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .product-container::-webkit-scrollbar-thumb {
+      background: #ffcc00;
+      border-radius: 10px;
+    }
+
+    .product-container::-webkit-scrollbar-track {
+      background: #1e1e1e;
     }
 
     .product-card {
-      width: 300px;
+      min-width: 150px;
       height: auto;
       overflow: hidden;
-      border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       background-color: #1e1e1e;
       text-align: center;
-      padding: 1rem;
+      padding: 0.5rem;
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.5s ease, transform 0.5s ease;
@@ -126,39 +146,40 @@
 
     .product-card img {
       width: 100%;
-      height: 300px;
+      height: 150px;
       object-fit: cover;
-      border-radius: 20px;
+      border-radius: 15px;
       transition: transform 0.3s ease, filter 0.3s ease;
     }
 
     .product-card h3 {
-      font-size: 1.2rem;
-      margin: 1rem 0 0.5rem;
+      font-size: 0.9rem;
+      margin: 0.5rem 0 0.3rem;
       color: #ffffff;
     }
 
     .product-card p {
-      font-size: 0.9rem;
+      font-size: 0.7rem;
       color: #b3b3b3;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     .product-card .price {
-      font-size: 1.1rem;
+      font-size: 0.8rem;
       font-weight: bold;
       color: #ffcc00;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     .product-card .buy-button {
       display: inline-block;
-      padding: 0.7rem 1.5rem;
+      padding: 0.5rem 1rem;
       background-color: #ffcc00;
       color: #121212;
+      font-size: 0.7rem;
       font-weight: bold;
       text-decoration: none;
-      border-radius: 10px;
+      border-radius: 8px;
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
@@ -170,7 +191,7 @@
     /* Hover Effect */
     .product-card:hover {
       transform: scale(1.05);
-      box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
     }
 
     .product-card:hover img {
@@ -205,34 +226,108 @@
 
   <!-- Main Content -->
   <main class="content">
-    <div class="product-container">
-      <div class="product-card" data-scroll>
-        <img src="image/cnth.jpg" alt="Game 1">
-        <h3>Game Title 1</h3>
-        <p>Action-packed adventure game.</p>
-        <div class="price">$19.99</div>
-        <a href="#" class="buy-button">Beli Sekarang</a>
+    <!-- Category 1 -->
+    <div>
+      <div class="category-title">Action Games</div>
+      <div class="product-container">
+        <div class="product-card" data-scroll>
+          <img src="image/cnth.jpg" alt="Game 1">
+          <h3>Game Title 1</h3>
+          <p>Action-packed adventure game.</p>
+          <div class="price">$19.99</div>
+          <a href="#" class="buy-button">Beli Sekarang</a>
+        </div>
+        <div class="product-card" data-scroll>
+          <img src="image/cnth.jpg" alt="Game 2">
+          <h3>Game Title 2</h3>
+          <p>Thrilling puzzle-solving experience.</p>
+          <div class="price">$24.99</div>
+          <a href="#" class="buy-button">Beli Sekarang</a>
+        </div>
+        <div class="product-card" data-scroll>
+          <img src="image/cnth.jpg" alt="Game 3">
+          <h3>Game Title 3</h3>
+          <p>RPG game with stunning visuals.</p>
+          <div class="price">$29.99</div>
+          <a href="#" class="buy-button">Beli Sekarang</a>
+        </div>
+        <div class="product-card" data-scroll>
+          <img src="image/cnth.jpg" alt="Game 4">
+          <h3>Game Title 4</h3>
+          <p>Multiplayer shooter game.</p>
+          <div class="price">$34.99</div>
+          <a href="#" class="buy-button">Beli Sekarang</a>
+        </div>
+        <div class="product-card" data-scroll>
+          <img src="image/cnth.jpg" alt="Game 5">
+          <h3>Game Title 5</h3>
+          <p>Epic fantasy RPG adventure.</p>
+          <div class="price">$39.99</div>
+          <a href="#" class="buy-button">Beli Sekarang</a>
+        </div>
+        <div class="product-card" data-scroll>
+          <img src="image/cnth.jpg" alt="Game 6">
+          <h3>Game Title 6</h3>
+          <p>Open-world exploration RPG.</p>
+          <div class="price">$44.99</div>
+          <a href="#" class="buy-button">Beli Sekarang</a>
+        </div>
+        <div class="product-card" data-scroll>
+          <img src="image/cnth.jpg" alt="Game 7">
+          <h3>Game Title 7</h3>
+          <p>Story-driven single-player RPG.</p>
+          <div class="price">$49.99</div>
+          <a href="#" class="buy-button">Beli Sekarang</a>
+        </div>
       </div>
-      <div class="product-card" data-scroll>
-        <img src="image/cnth.jpg" alt="Game 2">
-        <h3>Game Title 2</h3>
-        <p>Thrilling puzzle-solving experience.</p>
-        <div class="price">$24.99</div>
-        <a href="#" class="buy-button">Beli Sekarang</a>
+    </div>
+
+    <!-- Category 2 -->
+    <div>
+      <div class="category-title">RPG Games</div>
+      <div class="product-container">
+        <div class="product-card" data-scroll>
+          <img src="image/cnth.jpg" alt="Game 8">
+          <h3>Game Title 8</h3>
+          <p>Multiplayer online RPG.</p>
+          <div class="price">$54.99</div>
+          <a href="#" class="buy-button">Beli Sekarang</a>
+        </div>
+        <div class="product-card" data-scroll>
+          <img src="image/cnth.jpg" alt="Game 9">
+          <h3>Game Title 9</h3>
+          <p>Mystery adventure game.</p>
+          <div class="price">$59.99</div>
+          <a href="#" class="buy-button">Beli Sekarang</a>
+        </div>
+        <div class="product-card" data-scroll>
+          <img src="image/cnth.jpg" alt="Game 10">
+          <h3>Game Title 10</h3>
+          <p>Fantasy exploration game.</p>
+          <div class="price">$64.99</div>
+          <a href="#" class="buy-button">Beli Sekarang</a>
+        </div>
       </div>
-      <div class="product-card" data-scroll>
-        <img src="image/cnth.jpg" alt="Game 3">
-        <h3>Game Title 3</h3>
-        <p>RPG game with stunning visuals.</p>
-        <div class="price">$29.99</div>
-        <a href="#" class="buy-button">Beli Sekarang</a>
-      </div>
-      <div class="product-card" data-scroll>
-        <img src="image/cnth.jpg" alt="Game 4">
-        <h3>Game Title 4</h3>
-        <p>Multiplayer shooter game.</p>
-        <div class="price">$34.99</div>
-        <a href="#" class="buy-button">Beli Sekarang</a>
+    </div>
+
+    <!-- Category 3 -->
+    <div>
+      <div class="category-title">Adventure Games</div>
+      <div class="product-container">
+        <div class="product-card" data-scroll>
+          <img src="image/cnth.jpg" alt="Game 11">
+          <h3>Game Title 11</h3>
+          <p>Brain-teasing puzzle game.</p>
+          <div class="price">$69.99</div>
+          <a href="#" class="buy-button">Beli Sekarang</a>
+        </div>
+        <div class="product-card" data-scroll>
+          <img src="image/cnth.jpg" alt="Game 12">
+          <h3>Game Title 12</h3>
+          <p>Relaxing puzzle experience.</p>
+          <div class="price">$74.99</div>
+          <a href="#" class="buy-button">Beli Sekarang</a>
+        </div>
       </div>
     </div>
   </main>
