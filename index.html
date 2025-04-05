@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game Store</title>
+  <!-- Tambahkan Google Font Baru -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* Reset default margin and padding */
     * {
@@ -70,8 +71,8 @@
     .navbar {
       width: 100%;
       background-color: #1e1e1e;
-      padding: 1rem 0;
-      text-align: center;
+      padding: 1rem 2rem; /* Padding kiri lebih besar */
+      text-align: left; /* Pindahkan teks ke kiri */
       position: fixed;
       top: 0;
       left: 0;
@@ -79,11 +80,15 @@
     }
 
     .store-title {
-      font-size: 2rem;
-      font-weight: bold;
+      font-family: 'Bebas Neue', cursive; /* Font baru */
+      font-size: 2.5rem; /* Ukuran font sedikit diperbesar */
       letter-spacing: 2px;
       text-transform: uppercase;
       color: #ffffff;
+      margin: 0;
+      white-space: nowrap; /* Pastikan teks tidak pindah baris */
+      overflow: hidden; /* Sembunyikan overflow untuk efek mengetik */
+      border-right: 2px solid #ffcc00; /* Cursor efek mengetik */
     }
 
     /* Main Content Styling */
@@ -221,7 +226,7 @@
 
   <!-- Navbar -->
   <nav class="navbar">
-    <h1 class="store-title">Game Store</h1>
+    <h1 class="store-title" id="typing-effect">Game Store</h1>
   </nav>
 
   <!-- Main Content -->
@@ -251,6 +256,13 @@
           <div class="price">$29.99</div>
           <a href="#" class="buy-button">Beli Sekarang</a>
         </div>
+      </div>
+    </div>
+
+    <!-- Category 2 -->
+    <div>
+      <div class="category-title">RPG Games</div>
+      <div class="product-container">
         <div class="product-card" data-scroll>
           <img src="image/cnth.jpg" alt="Game 4">
           <h3>Game Title 4</h3>
@@ -265,48 +277,6 @@
           <div class="price">$39.99</div>
           <a href="#" class="buy-button">Beli Sekarang</a>
         </div>
-        <div class="product-card" data-scroll>
-          <img src="image/cnth.jpg" alt="Game 6">
-          <h3>Game Title 6</h3>
-          <p>Open-world exploration RPG.</p>
-          <div class="price">$44.99</div>
-          <a href="#" class="buy-button">Beli Sekarang</a>
-        </div>
-        <div class="product-card" data-scroll>
-          <img src="image/cnth.jpg" alt="Game 7">
-          <h3>Game Title 7</h3>
-          <p>Story-driven single-player RPG.</p>
-          <div class="price">$49.99</div>
-          <a href="#" class="buy-button">Beli Sekarang</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Category 2 -->
-    <div>
-      <div class="category-title">RPG Games</div>
-      <div class="product-container">
-        <div class="product-card" data-scroll>
-          <img src="image/cnth.jpg" alt="Game 8">
-          <h3>Game Title 8</h3>
-          <p>Multiplayer online RPG.</p>
-          <div class="price">$54.99</div>
-          <a href="#" class="buy-button">Beli Sekarang</a>
-        </div>
-        <div class="product-card" data-scroll>
-          <img src="image/cnth.jpg" alt="Game 9">
-          <h3>Game Title 9</h3>
-          <p>Mystery adventure game.</p>
-          <div class="price">$59.99</div>
-          <a href="#" class="buy-button">Beli Sekarang</a>
-        </div>
-        <div class="product-card" data-scroll>
-          <img src="image/cnth.jpg" alt="Game 10">
-          <h3>Game Title 10</h3>
-          <p>Fantasy exploration game.</p>
-          <div class="price">$64.99</div>
-          <a href="#" class="buy-button">Beli Sekarang</a>
-        </div>
       </div>
     </div>
 
@@ -315,17 +285,10 @@
       <div class="category-title">Adventure Games</div>
       <div class="product-container">
         <div class="product-card" data-scroll>
-          <img src="image/cnth.jpg" alt="Game 11">
-          <h3>Game Title 11</h3>
-          <p>Brain-teasing puzzle game.</p>
-          <div class="price">$69.99</div>
-          <a href="#" class="buy-button">Beli Sekarang</a>
-        </div>
-        <div class="product-card" data-scroll>
-          <img src="image/cnth.jpg" alt="Game 12">
-          <h3>Game Title 12</h3>
-          <p>Relaxing puzzle experience.</p>
-          <div class="price">$74.99</div>
+          <img src="image/cnth.jpg" alt="Game 6">
+          <h3>Game Title 6</h3>
+          <p>Open-world exploration RPG.</p>
+          <div class="price">$44.99</div>
           <a href="#" class="buy-button">Beli Sekarang</a>
         </div>
       </div>
@@ -370,6 +333,28 @@
         observer.observe(el);
       });
     }
+
+    // Typing Effect Script
+    const typingEffectElement = document.getElementById("typing-effect");
+    const text = "Game Store";
+    let index = 0;
+
+    function typeWriter() {
+      if (index < text.length) {
+        typingEffectElement.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 100); // Speed of typing effect
+      } else {
+        setTimeout(() => {
+          typingEffectElement.textContent = ""; // Clear text
+          index = 0; // Reset index
+          typeWriter(); // Restart typing effect
+        }, 1000); // Delay before restarting
+      }
+    }
+
+    // Start the typing effect
+    typeWriter();
   </script>
 </body>
 </html>
